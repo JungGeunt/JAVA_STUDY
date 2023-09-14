@@ -2,6 +2,7 @@ package day16.file;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.ObjectInputStream.GetField;
 
 public class FileExample {
 	
@@ -19,6 +20,8 @@ public class FileExample {
 		//2. isDirectory : 디렉터리인지 여부 확인 (파일이라면 false)
 		System.out.println("isDirectory? " + f.isDirectory());
 		System.out.println("isDirectory? " + dir.exists());
+		
+		System.out.println("parent : " +f.getParent());
 		
 		//3. isAbsolute :해당 결로가 절대 경로인지 확인
 		//파일이나 디렉토리를 지정할 떄 , 루트(최상위 경로)부터 모든 경로를 다 기술하는 경우 "절대경로"

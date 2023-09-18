@@ -16,7 +16,7 @@ public class ThreadEx5 {
 						System.out.println(e.getMessage());
 					}
 				}
-				System.out.println("스레드 실행 종효");
+				System.out.println("스레드 실행 종료");
 			}
 		});
 				t1.start();

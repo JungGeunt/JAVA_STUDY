@@ -1,7 +1,6 @@
 package day21.thread;
 
 public class ThreadEx9 {
-
 	public static void main(String[] args) {
 		// yield()메서드 : 동일한 우선순위를 가진 다른 스레드에게 실행 양보.
 		YieldThread t1 = new YieldThread();
@@ -23,9 +22,7 @@ public class ThreadEx9 {
 		t1.isBreak =true;
 		t2.isBreak= true;
 	}
-
 }
-
 class YieldThread extends Thread{
 	boolean isBreak =false;
 	boolean isContinue = true;

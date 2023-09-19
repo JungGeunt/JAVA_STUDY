@@ -27,6 +27,7 @@ public class UDPClient {
 				
 				//서버로 전송(데이터, 데이터 길이 ,서버 IP , 포트번호)
 				DatagramPacket outPacket = new DatagramPacket(msg1, msg1.length ,serverIP , 9000);
+				
 				dataSocket.send(outPacket);
 				//소켓 닫기
 				dataSocket.close();

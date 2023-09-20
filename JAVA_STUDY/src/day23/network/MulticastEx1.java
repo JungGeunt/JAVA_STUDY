@@ -40,8 +40,7 @@ public class MulticastEx1 {
 						InetAddress address = inPacket.getAddress();
 						//클라이언트 포트
 						int port = inPacket.getPort();
-						System.out.println("클라이언트 주소 : " +address);
-						System.out.println("클라이언트 포트 번호 : " +port);
+						
 					}
 					
 					

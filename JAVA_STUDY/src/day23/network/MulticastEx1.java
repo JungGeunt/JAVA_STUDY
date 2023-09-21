@@ -34,7 +34,7 @@ public class MulticastEx1 {
 						socket.receive(inPacket);
 						//문자열로 저장
 						String msg = new String(inMsg , 0 , inPacket.getLength());
-						System.out.println("클라이언트 메시지 : "+ msg);
+						System.out.println( msg);
 						
 						//클라이언트 아이피
 						InetAddress address = inPacket.getAddress();

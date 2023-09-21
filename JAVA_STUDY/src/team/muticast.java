@@ -63,12 +63,12 @@ public class muticast {
                 int clientPort = inPacket.getPort();
 
                 if (!clients.containsKey(clientAddress)) {
-                    // New client, add to the list
+                   //새로운 클라이언
                     clients.put(clientAddress, clientPort);
                     System.out.println("사용자 " + clientAddress + ":" + clientPort + " 연결됨.");
                 }
 
-                // Broadcast the message to all clients
+                
                 broadcastMessage(msg, clientAddress, clientPort);
             }
         } catch (Exception e) {

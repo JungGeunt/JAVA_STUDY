@@ -71,7 +71,7 @@ public class PersonsDAO {
 			System.out.println(e.getMessage());
 		} finally {
 			try {
-				if(conn!=null) conn.close();
+				//if(conn!=null) conn.close();
 				if(stmt!=null) stmt.close();
 			} catch (Exception e2) {}
 		}
@@ -103,6 +103,10 @@ public class PersonsDAO {
 			} catch (SQLException sqle) {
 				System.out.println("SQL 연동에러");
 				System.out.println(sqle.getMessage());
+			}finally {
+				try {
+					if(stmt!=null) stmt.close();
+				} catch (Exception e) {}
 			}
 			
 			
@@ -132,7 +136,6 @@ public class PersonsDAO {
 				System.out.println("입력한 id의 결과가 없습니다.");
 			}
 			
-			rs.close();
 			
 		} catch (SQLException sqle) {
 			System.out.println(sqle.getMessage());
@@ -151,18 +154,24 @@ public class PersonsDAO {
 		public int updatePersons(PersonsVO vo) {
 			int result =0;
 			
-			String sql  ="Update Persons set" + + "where id= " 
+			String sql  ="Update Persons set lastName='" + vo.getLastName() 
+														+ "', firstName='" + vo.getFirstName() 
+														+ "', age=" + vo.getAge() 
+														+ ", city='" + vo.getCity() 
+														+ "' WHERE id=" + vo.getId();
 			
 			try {
 				stmt =conn.createStatement();
-				rs = stmt.executeQuery(sql);
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-		
-			
-
+				result = stmt.executeUpdate(sql);
 				
+			} catch (SQLException sqle) {
+				 System.out.println("SQL 연동 에러");
+			     System.out.println(sqle.getMessage());
+			}finally {
+		        try {
+		            if (stmt != null) stmt.close();  
+		        } catch (Exception e2) {}
+		    }
 			return result;
 		}
 		
@@ -172,12 +181,20 @@ public class PersonsDAO {
 		public int deletePersons(int id) {
 			int result =0;
 			
+			String sql  = "delete from Persons where id =" +id;
+			try {
+				stmt =conn.createStatement();
+				result = stmt.executeUpdate(sql);
+				
+			} catch (SQLException sqle) {
+				 System.out.println("SQL 연동 에러");
+			     System.out.println(sqle.getMessage());
+			}finally {
+		        try {
+		            if (stmt != null) stmt.close();  
+		        } catch (Exception e2) {}
+		    }
 			return result;
 		}
-
-
-
-
-
 
 }

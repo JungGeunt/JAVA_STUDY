@@ -14,5 +14,6 @@
 	<classpathentry kind="lib" path="C:/JAVAProject/FirstJAVA/mysql-connector-j-8.1.0.jar"/>
 	<classpathentry kind="lib" path="C:/JAVAProject/FirstJAVA/sqlite-jdbc-3.43.0.0.jar"/>
 	<classpathentry kind="lib" path="C:/JAVAProject/FirstJAVA/mariadb-java-client-3.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/JAVAProject/FirstJAVA/ojdbc8-23.2.0.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
